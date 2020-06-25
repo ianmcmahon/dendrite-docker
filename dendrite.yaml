@@ -112,15 +112,15 @@ kafka:
 # for Postgres: postgres://username:password@hostname/database
 # for SQLite: file:filename.db or file:///path/to/filename.db
 database:
-    account: "postgres://dendrite:itsasecret@localhost/dendrite_account?sslmode=disable"
-    device: "postgres://dendrite:itsasecret@localhost/dendrite_device?sslmode=disable"
-    media_api: "postgres://dendrite:itsasecret@localhost/dendrite_mediaapi?sslmode=disable"
-    sync_api: "postgres://dendrite:itsasecret@localhost/dendrite_syncapi?sslmode=disable"
-    room_server: "postgres://dendrite:itsasecret@localhost/dendrite_roomserver?sslmode=disable"
-    server_key: "postgres://dendrite:itsasecret@localhost/dendrite_serverkey?sslmode=disable"
-    federation_sender: "postgres://dendrite:itsasecret@localhost/dendrite_federationsender?sslmode=disable"
-    appservice: "postgres://dendrite:itsasecret@localhost/dendrite_appservice?sslmode=disable"
-    public_rooms_api: "postgres://dendrite:itsasecret@localhost/dendrite_publicroomsapi?sslmode=disable"
+    account: "postgres://dendrite:itsasecret@postgres/dendrite_account?sslmode=disable"
+    device: "postgres://dendrite:itsasecret@postgres/dendrite_device?sslmode=disable"
+    media_api: "postgres://dendrite:itsasecret@postgres/dendrite_mediaapi?sslmode=disable"
+    sync_api: "postgres://dendrite:itsasecret@postgres/dendrite_syncapi?sslmode=disable"
+    room_server: "postgres://dendrite:itsasecret@postgres/dendrite_roomserver?sslmode=disable"
+    server_key: "postgres://dendrite:itsasecret@postgres/dendrite_serverkey?sslmode=disable"
+    federation_sender: "postgres://dendrite:itsasecret@postgres/dendrite_federationsender?sslmode=disable"
+    appservice: "postgres://dendrite:itsasecret@postgres/dendrite_appservice?sslmode=disable"
+    public_rooms_api: "postgres://dendrite:itsasecret@postgres/dendrite_publicroomsapi?sslmode=disable"
     max_open_conns: 100
     max_idle_conns: 2
     conn_max_lifetime: -1
@@ -131,18 +131,18 @@ database:
 # These shouldn't be exposed to the public internet.
 # These aren't needed when running dendrite as a monolithic server.
 listen:
-    room_server: "localhost:7770"
-    client_api: "localhost:7771"
-    federation_api: "localhost:7772"
-    sync_api: "localhost:7773"
-    media_api: "localhost:7774"
-    public_rooms_api: "localhost:7775"
-    federation_sender: "localhost:7776"
-    appservice_api: "localhost:7777"
-    edu_server: "localhost:7778"
-    key_server: "localhost:7779"
-    server_key_api: "localhost:7780"
-    user_api: "localhost:7781"
+    room_server: "room-server:7770"
+    client_api: "client-api:7771"
+    federation_api: "federation-api:7772"
+    sync_api: "sync-api:7773"
+    media_api: "media-api:7774"
+    public_rooms_api: "public-rooms-api:7775"
+    federation_sender: "federation-sender:7776"
+    appservice_api: "appservice-api:7777"
+    edu_server: "edu-server:7778"
+    key_server: "key-server:7779"
+    server_key_api: "server-key-api:7780"
+    user_api: "user-api:7781"
 
 # The configuration for tracing the dendrite components.
 tracing:
